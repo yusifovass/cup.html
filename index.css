@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: lightblue; 
+  }
+  
+  .cup-container {
+    position: relative;
+  }
+  
+  .cup {
+    width: 150px;
+    height: 100px;
+    background-color: white;
+    border-radius: 0 0 150px 150px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .handle {
+    width: 40px;
+    height: 60px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: -30px;
+  }
+  
+  .plate {
+    width: 180px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .bubbles {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  
+  .bubble {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    animation: bubble-animation 5s ease-in-out infinite;
+    opacity: 0;
+  }
+  
+  .bubble:nth-child(1) {
+    left: -20px;
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(2) {
+    left: -10px;
+    animation-delay: 0.8s;
+  }
+  
+  .bubble:nth-child(3) {
+    left: -20px;
+    animation-delay: 1.8s;
+  }
+  
+  .bubble:nth-child(4) {
+    left: -10px;
+    animation-delay: 2.8s;
+  }
+  
+  @keyframes bubble-animation {
+    0% {
+      transform: translateY(30px) scale(0.5);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(-50px) scale(1.2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-50px) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  
